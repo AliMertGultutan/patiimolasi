@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface-dim: #d4dcd5;
+  --color-surface-container-high: #e2eae3;
+  --color-surface-container-highest: #dce5dd;
+  --color-surface-tint: #48654e;
+  --color-surface-bright: #f3fcf4;
+  --color-surface: #f3fcf4;
+  --color-surface-container-low: #edf6ee;
+  --color-surface-container: #e8f0e8;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-variant: #dce5dd;
+  --color-background: #f3fcf4;
+  --color-inverse-surface: #2a322d;
+  --color-inverse-on-surface: #eaf3eb;
+  --color-on-surface: #161d19;
+  --color-on-surface-variant: #424842;
+  --color-outline: #727972;
+  --color-outline-variant: #c2c8c0;
+
+  --color-primary: #405d47;
+  --color-primary-container: #58765e;
+  --color-primary-fixed: #caebce;
+  --color-primary-fixed-dim: #aecfb2;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #dafcde;
+  --color-on-primary-fixed: #04210f;
+  --color-on-primary-fixed-variant: #304d38;
+
+  --color-secondary: #785745;
+  --color-secondary-container: #fdd1b9;
+  --color-secondary-fixed: #ffdbc9;
+  --color-secondary-fixed-dim: #e9bea7;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #795845;
+  --color-on-secondary-fixed: #2d1608;
+  --color-on-secondary-fixed-variant: #5e402f;
+
+  --color-tertiary: #575466;
+  --color-tertiary-container: #706c7f;
+  --color-tertiary-fixed: #e5dff6;
+  --color-tertiary-fixed-dim: #c9c3d9;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #f6f0ff;
+  --color-on-tertiary-fixed: #1c1a29;
+
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+
+  --font-display: 'Quicksand', system-ui, -apple-system, sans-serif;
+  --font-headline: 'Quicksand', system-ui, -apple-system, sans-serif;
+  --font-label: 'Quicksand', system-ui, -apple-system, sans-serif;
+  --font-body: 'Nunito Sans', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
+  }
+}
+
+/* Material symbols utility */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Gentle breathing animation for Miso */
+@keyframes cat-breathing {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.018) translateY(-1px);
+  }
+}
+
+.animate-cat-breathe {
+  animation: cat-breathing 4s ease-in-out infinite;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-cat-breathe,
+  .animate-pulse,
+  .animate-bounce {
+    animation: none !important;
+    transition: none !important;
+  }
+}
